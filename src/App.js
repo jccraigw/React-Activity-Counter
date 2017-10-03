@@ -5,8 +5,11 @@ import  { SkiDayCount }  from './components/SkiDayCount';
 class App extends Component {
   render() {
     return (
-    <SkiDayCount />
-    );
+    <SkiDayCount total={50}
+    			 powder={20}
+    			 backcountry={10}
+    			 goal={100}/>
+    );				
   }
 }
 
