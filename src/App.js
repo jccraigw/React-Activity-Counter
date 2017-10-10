@@ -7,7 +7,8 @@ class App extends Component {
   render() {
     return (
 
-        <SkiDayCount />
+        <SkiDayCount total={false} />
+
     // <SkiDayList days={
     // 	[
     // 		{

@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import Terrain from 'react-icons/lib/md/terrain'
 import SnowFlake from 'react-icons/lib/ti/weather-snow'
 import Calendar from 'react-icons/lib/fa/calendar'
+import PropTypes from 'prop-types';
 
 export class SkiDayCount extends Component {
+  constructor(props) {
+    super(props);
+    const { total } = this.props
+    
+  }
 
   percentToDecimal(decimal){
 
@@ -13,7 +19,10 @@ export class SkiDayCount extends Component {
 
     return this.percentToDecimal(total/goal)
   }
+
   render() {
+
+      let { total } = this.props;
     return (
       <div className="ski-day-count">
         <div className="total-day">
@@ -42,9 +51,15 @@ export class SkiDayCount extends Component {
       </div>
     );
   }
+
+
+
+
 }
 
-SkiDayCount.defaultProps = {
+
+
+  SkiDayCount.defaultProps = {
     
       total: 50,
       powder: 10,
@@ -52,5 +67,13 @@ SkiDayCount.defaultProps = {
       goal: 75
   
 }
+
+
+SkiDayCount.propTypes = {
+  total: PropTypes.number,
+  powder: PropTypes.number,
+  backcountry: PropTypes.number
+}
+
 
 
